@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Japan Adventure Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+  <style>
+    body { margin: 0; padding: 0; font-family: sans-serif; }
+    #map { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+  <script>
+    const map = L.map('map', {
+      center: [36.2048, 138.2529],
+      zoom: 6,
+      worldCopyJump: true
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+      attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+      detectRetina: true
+    }).addTo(map);
+
+    const locations = [
+      { date: "July 3", place: "Tokyo", coords: [35.6762, 139.6503], activities: "Mitchell lands in Tokyo" },
+      { date: "Jul 4", place: "Tokyo", coords: [35.6762, 139.6503], activities: "Explore Tokyo, Logan arrives" },
+      { date: "Jul 5", place: "Nikko", coords: [36.7485, 139.5980], activities: "Toshogu Shrine, Kanmangafuchi Abyss, Shinkyo Bridge" },
+      { date: "Jul 6", place: "Nikko", coords: [36.7485, 139.5980], activities: "Hike day or Lake Chuzenji & Ryuzu Falls" },
+      { date: "Jul 7", place: "Oku-Nikko", coords: [36.7352, 139.4172], activities: "Senjogahara hike, Yudaki Falls, onsen" },
+      { date: "Jul 8", place: "Oku-Nikko", coords: [36.7352, 139.4172], activities: "Forest walks, Lake Chuzenji" },
+      { date: "Jul 9", place: "Shibu Onsen", coords: [36.7333, 138.4167], activities: "Explore onsen village, 9 baths" },
+      { date: "Jul 10", place: "Jigokudani", coords: [36.7322, 138.4626], activities: "Snow Monkey Park, relax in onsen" },
+      { date: "Jul 11", place: "Matsumoto", coords: [36.2381, 137.9718], activities: "Matsumoto Castle, Nakamachi, soba" },
+      { date: "Jul 12", place: "Kanazawa", coords: [36.5613, 136.6562], activities: "Kenrokuen Garden, Samurai District" },
+      { date: "Jul 13", place: "Kanazawa", coords: [36.5613, 136.6562], activities: "21st Century Museum, tea houses, market" },
+      { date: "Jul 14", place: "Kurashiki", coords: [34.5833, 133.7667], activities: "Bikan Quarter, canal walk" },
+      { date: "Jul 15", place: "Kurashiki", coords: [34.5833, 133.7667], activities: "Explore more or relax" },
+      { date: "Jul 16", place: "Kyoto", coords: [35.0116, 135.7681], activities: "Fushimi Inari, Nishiki Market, Gion" },
+      { date: "Jul 17", place: "Kyoto", coords: [35.0116, 135.7681], activities: "Arashiyama, Philosopher’s Path" },
+      { date: "Jul 18", place: "Osaka", coords: [34.6937, 135.5023], activities: "Dotonbori, Umeda Sky Building" },
+      { date: "Jul 19", place: "Tokyo", coords: [35.6762, 139.6503], activities: "Return via Nagoya (optional SCMAGLEV)" },
+      { date: "Jul 20", place: "Tokyo", coords: [35.6762, 139.6503], activities: "Train to Narita or Haneda ✈️" },
+    ];
+
+    const latlngs = [];
+    const markers = L.markerClusterGroup();
+
+    locations.forEach((loc) => {
+      const baseQuery = encodeURIComponent(loc.place);
+      const placeLink = `https://www.google.com/search?tbm=isch&q=${baseQuery}`;
+
+      const activities = loc.activities.split(/,|\bor\b/).map(a => a.trim()).filter(Boolean);
+      const activityLinks = activities.map(act => {
+        if (/Mitchell lands|Logan arrives/i.test(act)) return act;
+        const query = encodeURIComponent(`${loc.place} ${act}`);
+        return `<a href='https://www.google.com/search?tbm=isch&q=${query}' target='_blank'>📷 ${act}</a>`;
+      }).join('<br>');
+
+      const popup = `<strong>${loc.date} - <a href='${placeLink}' target='_blank'>${loc.place}</a></strong><br>${activityLinks}`;
+      const marker = L.marker(loc.coords).bindPopup(popup);
+      markers.addLayer(marker);
+      latlngs.push(loc.coords);
+    });
+
+    map.addLayer(markers);
+
+    if (latlngs.length > 1) {
+      L.polyline(latlngs, { color: 'blue', weight: 4, opacity: 0.7 }).addTo(map);
+    }
+  </script>
+</body>
+</html>
