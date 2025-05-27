@@ -14,7 +14,7 @@ This is an interactive map built with [Leaflet.js](https://leafletjs.com/) for a
   - Emoji train icons at the midpoint of each route
 
 > **To view the live map:**  
-👉 [https://github.com/mitchell-aitken/Japan-Trip-Map](https://github.com/mitchell-aitken/Japan-Trip-Map)
+👉 [https://github.com/mitchell-aitken/Japan-Trip-Map](https://mitchell-aitken.github.io/Japan-Trip-Map/)
 
 ---
 
