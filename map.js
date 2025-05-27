@@ -133,7 +133,7 @@ L.polyline([
 L.marker([36.691100000000006, 138.3077], {
     icon: trainIcon
 })
-.bindPopup(`<b>Train Segment</b><br>From: Nagano Station<br>To: Yudanaka / Shibu Onsen Station<br>
+.bindPopup(`<b>Train Segment</b><br>From: Nagano Station<br>To: Yudanaka Station<br>
 <a href='https://www.google.com/maps/dir/Nagano%20Station%20Japan/Yudanaka%20/%20Shibu%20Onsen%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
 .bindTooltip("Train: Nagano → Yudanaka / Shibu Onsen", {permanent: false})
 .addTo(map);
@@ -150,7 +150,7 @@ L.polyline([
 L.marker([36.647450000000006, 137.53840000000002], {
     icon: trainIcon
 })
-.bindPopup(`<b>Train Segment</b><br>From: Yudanaka / Shibu Onsen Station<br>To: Kanazawa Station<br>
+.bindPopup(`<b>Train Segment</b><br>From: Yudanaka Station<br>To: Kanazawa Station<br>
 <a href='https://www.google.com/maps/dir/Yudanaka%20/%20Shibu%20Onsen%20Station%20Japan/Kanazawa%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
 .bindTooltip("Train: Yudanaka / Shibu Onsen → Kanazawa", {permanent: false})
 .addTo(map);
