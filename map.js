@@ -178,30 +178,20 @@ const locations = [
         notes: {
         }
     },
+
     {
-        date: 'Jul 16',
-        dateRange: 'Jul 16',
-        coords: [34.973, 138.9333],
-        place: 'Izu Peninsula (Shuzenji)',
-        activities: {
-            'Jul 16': ['Shuzenji Temple', 'Shuzenji Bamboo Forest', 'Shuzenji Onsen', 'Katsura River walk', 'Niji-no-Sato Theme Park', 'craft workshops in Shuzenji', 'onsen hopping']
-        },
-        notes: {
-            'Jul 16': 'Start Izu Peninsula'
-        }
-    },
-    {
-        date: 'Jul 17',
-        dateRange: 'Jul 17',
-        coords: [34.8825, 139.0981],
+        date: 'Jul 16-17',
+        dateRange: 'Jul 16-17',
+        coords: [34.8825, 139.0981],  // Use Jogasaki Coast coords
         place: 'Izu Peninsula (Jogasaki Coast)',
         activities: {
-            'Jul 17': ['Jogasaki Coast hiking trail', 'Jogasaki Suspension Bridge', 'Mount Omuro ropeway', 'Mount Omuro crater walk', 'Izu Teddy Bear Museum', 'Izu Kogen art museums', 'Jogasaki lighthouse', 'coastal viewpoints']
+            'Jul 16-17': ['Jogasaki Coast hiking trail', 'Jogasaki Suspension Bridge', 'Mount Omuro ropeway', 'Mount Omuro crater walk', 'Izu Teddy Bear Museum', 'Izu Kogen art museums', 'Jogasaki lighthouse', 'coastal viewpoints']
         },
         notes: {
-            'Jul 17': 'Seaside hikes'
+            'Jul 16-17': 'Seaside hikes'
         }
     },
+
     {
         date: 'Jul 18',
         dateRange: 'Jul 18',
@@ -297,8 +287,7 @@ const trainSegments = [
     [[36.6486, 138.1948], [36.5613, 136.6562], "Nagano Station", "Kanazawa Station", "Jul 10"],
     [[36.5613, 136.6562], [36.1462, 137.2517], "Kanazawa Station", "Takayama Station", "Jul 12"],
     [[36.1462, 137.2517], [35.0116, 135.7681], "Takayama Station", "Kyoto Station", "Jul 13"],
-    [[35.0116, 135.7681], [34.9730, 138.9333], "Kyoto Station", "Shuzenji Station", "Jul 16"],
-    [[34.9730, 138.9333], [34.8825, 139.0981], "Shuzenji Station", "Jogasaki-Kaigan Station", "Jul 17"],
+    [[35.0116, 135.7681], [34.8825, 139.0981], "Kyoto Station", "Jogasaki-Kaigan Station", "Jul 16-17"],
     [[34.8825, 139.0981], [34.6784, 138.9450], "Jogasaki-Kaigan Station", "Izukyu Shimoda Station", "Jul 18"],
     [[34.6784, 138.9450], [35.6823, 139.7682], "Izukyu Shimoda Station", "Tokyo Station", "Jul 19"],
     [[35.6823, 139.7682], [35.7765, 140.3189], "Tokyo Station", "Narita Airport", "Jul 20"]
