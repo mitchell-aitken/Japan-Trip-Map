@@ -1,4 +1,3 @@
-
 // Initialize map
 const map = L.map('map').setView([36.2048, 138.2529], 6);
 
@@ -27,217 +26,304 @@ const trainIcon = L.divIcon({
     iconAnchor: [15, 15]
 });
 
-L.marker([35.6823, 139.7682], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Japan' target='_blank'>Tokyo</a></b> – Jul 3, Jul 4<br><br><b>Activities:</b><br><b>Jul 3</b><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Dinner%20in%20Shinjuku' target='_blank'>Dinner in Shinjuku</a><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Dinner%20in%20Ikebukuro' target='_blank'>Dinner in Ikebukuro</a><br><br><b>Jul 4</b><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Meiji%20Shrine' target='_blank'>Meiji Shrine</a><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Harajuku' target='_blank'>Harajuku</a><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Asakusa' target='_blank'>Asakusa</a><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Akihabara' target='_blank'>Akihabara</a><br><br><b>Jul 3 Notes:</b><br>Mitchell arrives 3:10pm, check in, relax<br><br><b>Jul 4 Notes:</b><br>Logan arrives 12:35pm<br><br><a href="https://www.google.com/search?q=Tokyo%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Tokyo%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Tokyo/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 3, Jul 4: Tokyo", {permanent: false, direction: 'top'});
-L.marker([36.7485, 139.5984], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Japan' target='_blank'>Nikko</a></b> – Jul 5, Jul 6<br><br><b>Activities:</b><br><b>Jul 5</b><br><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Shinkyo%20Bridge' target='_blank'>Shinkyo Bridge</a><br><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Kanmangafuchi%20Abyss' target='_blank'>Kanmangafuchi Abyss</a><br><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Explore%20Nikko%20town' target='_blank'>Explore Nikko town</a><br><br><b>Jul 6</b><br><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Lake%20Chuzenji' target='_blank'>Lake Chuzenji</a><br><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Kegon%20Falls' target='_blank'>Kegon Falls</a><br><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Hike%20Senjogahara' target='_blank'>Hike Senjogahara</a><br><a href='https://www.google.com/search?tbm=isch&q=Nikko%20Yumoto%20Onsen' target='_blank'>Yumoto Onsen</a><br><br><a href="https://www.google.com/search?q=Nikko%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Nikko%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Nikko/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 5, Jul 6: Nikko", {permanent: false, direction: 'top'});
-L.marker([36.6486, 138.1948], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Nagano%20Japan' target='_blank'>Nagano</a></b> – Jul 7<br><br><b>Activities:</b><br><b>Jul 7</b><br><a href='https://www.google.com/search?tbm=isch&q=Nagano%20Zenko-ji%20Temple' target='_blank'>Zenko-ji Temple</a><br><a href='https://www.google.com/search?tbm=isch&q=Nagano%20Joyama%20Park' target='_blank'>Joyama Park</a><br><a href='https://www.google.com/search?tbm=isch&q=Nagano%20Sake%20tasting' target='_blank'>Sake tasting</a><br><a href='https://www.google.com/search?tbm=isch&q=Nagano%20Nagano%20Prefectural%20Museum' target='_blank'>Nagano Prefectural Museum</a><br><br><b>Jul 7 Notes:</b><br>Travel day<br><br><a href="https://www.google.com/search?q=Nagano%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Nagano%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Nagano/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 7: Nagano", {permanent: false, direction: 'top'});
-L.marker([36.7336, 138.4206], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Yudanaka%20/%20Shibu%20Onsen%20Japan' target='_blank'>Yudanaka / Shibu Onsen</a></b> – Jul 8, Jul 9<br><br><b>Activities:</b><br><b>Jul 8</b><br><a href='https://www.google.com/search?tbm=isch&q=Yudanaka%20/%20Shibu%20Onsen%20Snow%20Monkey%20Park%20%F0%9F%90%92' target='_blank'>Snow Monkey Park 🐒</a><br><a href='https://www.google.com/search?tbm=isch&q=Yudanaka%20/%20Shibu%20Onsen%20Explore%20onsen%20village' target='_blank'>Explore onsen village</a><br><a href='https://www.google.com/search?tbm=isch&q=Yudanaka%20/%20Shibu%20Onsen%20Dine%20at%20ryokan' target='_blank'>Dine at ryokan</a><br><br><b>Jul 9</b><br><a href='https://www.google.com/search?tbm=isch&q=Yudanaka%20/%20Shibu%20Onsen%20Public%20bath%20tour' target='_blank'>Public bath tour</a><br><a href='https://www.google.com/search?tbm=isch&q=Yudanaka%20/%20Shibu%20Onsen%20Forest%20walk' target='_blank'>Forest walk</a><br><a href='https://www.google.com/search?tbm=isch&q=Yudanaka%20/%20Shibu%20Onsen%20Temple%20visit' target='_blank'>Temple visit</a><br><br><b>Jul 9 Notes:</b><br>Relaxation day<br><br><a href="https://www.google.com/search?q=Yudanaka%20/%20Shibu%20Onsen%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Yudanaka%20/%20Shibu%20Onsen%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Yudanaka%20/%20Shibu%20Onsen/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 8, Jul 9: Yudanaka / Shibu Onsen", {permanent: false, direction: 'top'});
-L.marker([36.5613, 136.6562], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%20Japan' target='_blank'>Kanazawa</a></b> – Jul 10, Jul 11<br><br><b>Activities:</b><br><b>Jul 10</b><br><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%20Higashi%20Chaya%20District' target='_blank'>Higashi Chaya District</a><br><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%20Tea%20houses' target='_blank'>Tea houses</a><br><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%20Local%20craft%20shops' target='_blank'>Local craft shops</a><br><br><b>Jul 11</b><br><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%20Kenrokuen%20Garden' target='_blank'>Kenrokuen Garden</a><br><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%2021st%20Century%20Museum' target='_blank'>21st Century Museum</a><br><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%20Samurai%20District' target='_blank'>Samurai District</a><br><a href='https://www.google.com/search?tbm=isch&q=Kanazawa%20Omicho%20Market' target='_blank'>Omicho Market</a><br><br><a href="https://www.google.com/search?q=Kanazawa%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Kanazawa%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Kanazawa/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 10, Jul 11: Kanazawa", {permanent: false, direction: 'top'});
-L.marker([36.1462, 137.2517], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Japan' target='_blank'>Takayama</a></b> – Jul 12, Jul 13<br><br><b>Activities:</b><br><b>Jul 12</b><br><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Old%20town%20stroll' target='_blank'>Old town stroll</a><br><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Sannomachi%20Street' target='_blank'>Sannomachi Street</a><br><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Local%20shops' target='_blank'>Local shops</a><br><br><b>Jul 13</b><br><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Morning%20market' target='_blank'>Morning market</a><br><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Hida%20Folk%20Village' target='_blank'>Hida Folk Village</a><br><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Float%20Museum' target='_blank'>Float Museum</a><br><a href='https://www.google.com/search?tbm=isch&q=Takayama%20Sake%20tasting' target='_blank'>Sake tasting</a><br><br><a href="https://www.google.com/search?q=Takayama%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Takayama%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Takayama/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 12, Jul 13: Takayama", {permanent: false, direction: 'top'});
-L.marker([35.0116, 135.7681], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Japan' target='_blank'>Kyoto</a></b> – Jul 14, Jul 15<br><br><b>Activities:</b><br><b>Jul 14</b><br><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Nishiki%20Market' target='_blank'>Nishiki Market</a><br><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Yasaka%20Shrine' target='_blank'>Yasaka Shrine</a><br><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Gion%20at%20dusk' target='_blank'>Gion at dusk</a><br><br><b>Jul 15</b><br><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Fushimi%20Inari' target='_blank'>Fushimi Inari</a><br><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Arashiyama%20Bamboo%20Grove' target='_blank'>Arashiyama Bamboo Grove</a><br><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Monkey%20Park%20%F0%9F%90%92' target='_blank'>Monkey Park 🐒</a><br><a href='https://www.google.com/search?tbm=isch&q=Kyoto%20Kiyomizudera%20Temple' target='_blank'>Kiyomizudera Temple</a><br><br><b>Jul 14 Notes:</b><br>Try Kyoto-style kaiseki dinner<br><br><a href="https://www.google.com/search?q=Kyoto%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Kyoto%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Kyoto/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 14, Jul 15: Kyoto", {permanent: false, direction: 'top'});
-L.marker([34.6937, 135.5023], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Osaka%20Japan' target='_blank'>Osaka</a></b> – Jul 16<br><br><b>Activities:</b><br><b>Jul 16</b><br><a href='https://www.google.com/search?tbm=isch&q=Osaka%20Dotonbori' target='_blank'>Dotonbori</a><br><a href='https://www.google.com/search?tbm=isch&q=Osaka%20Umeda%20Sky%20Building' target='_blank'>Umeda Sky Building</a><br><a href='https://www.google.com/search?tbm=isch&q=Osaka%20Osaka%20Castle' target='_blank'>Osaka Castle</a><br><a href='https://www.google.com/search?tbm=isch&q=Osaka%20Kuromon%20Market' target='_blank'>Kuromon Market</a><br><br><a href="https://www.google.com/search?q=Osaka%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Osaka%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Osaka/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 16: Osaka", {permanent: false, direction: 'top'});
-L.marker([34.5833, 133.7667], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Kurashiki%20Japan' target='_blank'>Kurashiki</a></b> – Jul 17, Jul 18<br><br><b>Activities:</b><br><b>Jul 17</b><br><a href='https://www.google.com/search?tbm=isch&q=Kurashiki%20Bikan%20Historical%20Quarter' target='_blank'>Bikan Historical Quarter</a><br><a href='https://www.google.com/search?tbm=isch&q=Kurashiki%20Ohara%20Museum' target='_blank'>Ohara Museum</a><br><a href='https://www.google.com/search?tbm=isch&q=Kurashiki%20Ivy%20Square' target='_blank'>Ivy Square</a><br><br><b>Jul 18</b><br><a href='https://www.google.com/search?tbm=isch&q=Kurashiki%20Folkcraft%20Museum' target='_blank'>Folkcraft Museum</a><br><a href='https://www.google.com/search?tbm=isch&q=Kurashiki%20Canal%20boat%20ride' target='_blank'>Canal boat ride</a><br><a href='https://www.google.com/search?tbm=isch&q=Kurashiki%20Textile%20shopping' target='_blank'>Textile shopping</a><br><br><a href="https://www.google.com/search?q=Kurashiki%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Kurashiki%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Kurashiki/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 17, Jul 18: Kurashiki", {permanent: false, direction: 'top'});
-L.marker([35.6845, 139.765], { icon: defaultIcon })
-    .addTo(map)
-    .bindPopup(`<b><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Japan' target='_blank'>Tokyo</a></b> – Jul 19, Jul 20<br><br><b>Activities:</b><br><b>Jul 19</b><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Ueno%20Park' target='_blank'>Ueno Park</a><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20National%20Museum' target='_blank'>National Museum</a><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Final%20shopping' target='_blank'>Final shopping</a><br><br><b>Jul 20</b><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Grab%20bento%20for%20train' target='_blank'>Grab bento for train</a><br><a href='https://www.google.com/search?tbm=isch&q=Tokyo%20Relax%20in%20airport%20lounge' target='_blank'>Relax in airport lounge</a><br><br><b>Jul 19 Notes:</b><br>Return to Tokyo<br><br><b>Jul 20 Notes:</b><br>Flight departs 6:30pm from Narita<br><br><a href="https://www.google.com/search?q=Tokyo%20weather%20July" target="_blank">🌤 Weather</a> |
-<a href="https://www.booking.com/searchresults.html?ss=Tokyo%20Japan" target="_blank">🏨 Hotels</a> |
-<a href="https://www.hostelworld.com/findabed.php/ChosenCity.Tokyo/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`)
-    .bindTooltip("Jul 19, Jul 20: Tokyo", {permanent: false, direction: 'top'});
-L.polyline([
-    [35.6823, 139.7682],
-    [36.7485, 139.5984]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
 
-L.marker([36.2154, 139.6833], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Tokyo Station<br>To: Nikko Station<br>
-<a href='https://www.google.com/maps/dir/Tokyo%20Station%20Japan/Nikko%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Tokyo → Nikko", {permanent: false})
-.addTo(map);
+const locations = [
+    {
+        date: 'Jul 3',
+        dateRange: 'Jul 3',
+        coords: [35.6823, 139.7682],
+        place: 'Tokyo',
+        activities: {
+            'Jul 3': ['Check-in and relax', 'dinner in Shinjuku', 'night walk in Shinjuku', 'Omoide Yokocho alley', 'Golden Gai bars', 'Tokyo Metropolitan Government Building observation deck']
+        },
+        notes: {
+            'Jul 3': 'Mitchell arrives 3:10pm, check-in, relax'
+        }
+    },
+    {
+        date: 'Jul 4',
+        dateRange: 'Jul 4',
+        coords: [35.6823, 139.7682],
+        place: 'Tokyo',
+        activities: {
+            'Jul 4': ['Meiji Shrine', 'Harajuku', 'Takeshita Street', 'Yoyogi Park', 'Ueno Park', 'Ueno Zoo', 'Ameyoko Market', 'Akihabara', 'Asakusa', 'Sensoji Temple', 'Sumida River cruise']
+        },
+        notes: {
+            'Jul 4': 'Logan arrives 12:35pm'
+        }
+    },
+    {
+        date: 'Jul 5',
+        dateRange: 'Jul 5',
+        coords: [36.7485, 139.598],
+        place: 'Nikko',
+        activities: {
+            'Jul 5': ['Shinkyo Bridge', 'Kanmangafuchi Abyss', 'Nikko town walk', 'Rinnoji Temple', 'Futarasan Shrine', 'Nikko Toshogu Shrine', 'Kanaya Hotel History House']
+        },
+        notes: {
+            'Jul 5': 'Travel to Nikko'
+        }
+    },
+    {
+        date: 'Jul 6',
+        dateRange: 'Jul 6',
+        coords: [36.7485, 139.598],
+        place: 'Nikko',
+        activities: {
+            'Jul 6': ['Lake Chuzenji cruise', 'lakeside walk at Lake Chuzenji', 'Kegon Falls', 'Akechidaira Ropeway', 'Senjogahara Marsh hike', 'Yumoto Onsen', 'Ryuzu Falls']
+        },
+        notes: {
+        }
+    },
+    {
+        date: 'Jul 7',
+        dateRange: 'Jul 7',
+        coords: [36.7485, 139.598],
+        place: 'Nikko',
+        activities: {
+            'Jul 7': ['Tamozawa Imperial Villa', 'Nikko Botanical Garden', 'Kirifuri Falls', 'Tobu World Square', 'Nikko Edo Wonderland', 'relax at onsen']
+        },
+        notes: {
+        }
+    },
+    {
+        date: 'Jul 8',
+        dateRange: 'Jul 8',
+        coords: [36.6486, 138.1948],
+        place: 'Nagano',
+        activities: {
+            'Jul 8': ['DAY trip to Snow Monkey Park','Zenko-ji Temple', 'Nagano Prefectural Museum of Art', 'Joyama Park', 'sake tasting at Nishinomon-Yoshinoya Sake Brewery', 'onsen stroll in Yudanaka']
+        },
+        notes: {
+            'Jul 8': 'Return to Nagano'
+        }
+    },
+    {
+        date: 'Jul 9',
+        dateRange: 'Jul 9',
+        coords: [36.6486, 138.1948],
+        place: 'Nagano',
+        activities: {
+            'Jul 9': ['Matsumoto Castle', 'Nakamachi Street', 'Matsumoto City Museum of Art', 'Daio Wasabi Farm', 'Togakushi Shrine', 'Togakushi Ninja Museum', 'hike in Togakushi area']
+        },
+        notes: {
+        }
+    },
+    {
+        date: 'Jul 10',
+        dateRange: 'Jul 10',
+        coords: [36.5613, 136.6562],
+        place: 'Kanazawa',
+        activities: {
+            'Jul 10': ['Kenrokuen Garden', 'Kanazawa Castle Park', 'Higashi Chaya District', 'Omicho Market', '21st Century Museum of Contemporary Art', 'Myoryuji Ninja Temple']
+        },
+        notes: {
+            'Jul 10': 'Travel + sightseeing'
+        }
+    },
+    {
+        date: 'Jul 11',
+        dateRange: 'Jul 11',
+        coords: [36.5613, 136.6562],
+        place: 'Kanazawa',
+        activities: {
+            'Jul 11': ['Nomura Samurai House', 'Nagamachi Samurai District', 'Oyama Shrine', 'D.T. Suzuki Museum', 'Kanazawa Phonograph Museum', 'tea ceremony in Higashi Chaya']
+        },
+        notes: {
+        }
+    },
+    {
+        date: 'Jul 12',
+        dateRange: 'Jul 12',
+        coords: [36.1462, 137.2517],
+        place: 'Takayama',
+        activities: {
+            'Jul 12': ['Sannomachi Historic Street', 'Miyagawa Morning Market', 'Takayama Jinya', 'Hida Folk Village', 'Takayama Festival Float Exhibition Hall', 'sake tasting in old town']
+        },
+        notes: {
+            'Jul 12': 'Scenic ride'
+        }
+    },
+    {
+        date: 'Jul 13',
+        dateRange: 'Jul 13',
+        coords: [35.0116, 135.7681],
+        place: 'Kyoto',
+        activities: {
+            'Jul 13': ['Nishiki Market', 'Yasaka Shrine', 'Gion at dusk', 'Philosopher’s Path', 'Maruyama Park', 'Nanzenji Temple', 'evening river walk in Pontocho Alley']
+        },
+        notes: {
+            'Jul 13': 'Kaiseki dinner'
+        }
+    },
+    {
+        date: 'Jul 14',
+        dateRange: 'Jul 14',
+        coords: [35.0116, 135.7681],
+        place: 'Kyoto',
+        activities: {
+            'Jul 14': ['Arashiyama Bamboo Grove', 'Monkey Park Iwatayama', 'Fushimi Inari Taisha', 'Kiyomizudera Temple', 'Nijo Castle', 'Kyoto Imperial Palace', 'Osaka Castle', 'Dotonbori canal area', 'Umeda Sky Building', 'Kuromon Market', 'Sumiyoshi Taisha Shrine']
+        },
+        notes: {
+        }
+    },
+    {
+        date: 'Jul 15',
+        dateRange: 'Jul 15',
+        coords: [35.0116, 135.7681],
+        place: 'Kyoto',
+        activities: {
+            'Jul 15': ['Philosopher’s Path', 'Ginkakuji Silver Pavilion', 'Heian Shrine', 'Nishijin Textile Center', 'Kyoto International Manga Museum', 'day trip to Uji Byodoin Temple', 'green tea tasting in Uji', 'day trip to Ohara Sanzen-in Temple', 'countryside walk in Ohara']
+        },
+        notes: {
+        }
+    },
+    {
+        date: 'Jul 16',
+        dateRange: 'Jul 16',
+        coords: [34.973, 138.9333],
+        place: 'Izu Peninsula (Shuzenji)',
+        activities: {
+            'Jul 16': ['Shuzenji Temple', 'Shuzenji Bamboo Forest', 'Shuzenji Onsen', 'Katsura River walk', 'Niji-no-Sato Theme Park', 'craft workshops in Shuzenji', 'onsen hopping']
+        },
+        notes: {
+            'Jul 16': 'Start Izu Peninsula'
+        }
+    },
+    {
+        date: 'Jul 17',
+        dateRange: 'Jul 17',
+        coords: [34.8825, 139.0981],
+        place: 'Izu Peninsula (Jogasaki Coast)',
+        activities: {
+            'Jul 17': ['Jogasaki Coast hiking trail', 'Jogasaki Suspension Bridge', 'Mount Omuro ropeway', 'Mount Omuro crater walk', 'Izu Teddy Bear Museum', 'Izu Kogen art museums', 'Jogasaki lighthouse', 'coastal viewpoints']
+        },
+        notes: {
+            'Jul 17': 'Seaside hikes'
+        }
+    },
+    {
+        date: 'Jul 18',
+        dateRange: 'Jul 18',
+        coords: [34.6784, 138.945],
+        place: 'Izu Peninsula (Shimoda)',
+        activities: {
+            'Jul 18': ['Shimoda beaches', 'Shirahama Beach', 'Tatadohama Beach', 'Perry Road', 'Ryosenji Temple', 'Shimoda Park', 'underwater sightseeing boat tour', 'Shimoda Ropeway to Mount Nesugatayama']
+        },
+        notes: {
+            'Jul 18': 'Final Izu night'
+        }
+    },
+    {
+        date: 'Jul 19',
+        dateRange: 'Jul 19',
+        coords: [35.6823, 139.7682],
+        place: 'Tokyo',
+        activities: {
+            'Jul 19': ['Ueno Park', 'Tokyo National Museum', 'Tokyo Skytree', 'Asakusa Sensoji Temple', 'teamLab Planets', 'teamLab Borderless', 'Odaiba', 'shopping in Shibuya', 'final ramen dinner', 'final sushi dinner']
+        },
+        notes: {
+            'Jul 19': 'Return to Tokyo'
+        }
+    },
+    {
+        date: 'Jul 20',
+        dateRange: 'Jul 20',
+        coords: [35.7765, 140.3189],
+        place: 'Narita Airport',
+        activities: {
+            'Jul 20': ['Relax in airport lounge', 'visit Narita Airport observation decks', 'buy souvenirs at airport shops']
+        },
+        notes: {
+            'Jul 20': 'Flight departs 6:30pm'
+        }
+    },
+];
 
-L.polyline([
-    [36.7485, 139.5984],
-    [36.6486, 138.1948]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
 
-L.marker([36.69855, 138.89659999999998], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Nikko Station<br>To: Nagano Station<br>
-<a href='https://www.google.com/maps/dir/Nikko%20Station%20Japan/Nagano%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Nikko → Nagano", {permanent: false})
-.addTo(map);
+// Merging locations to combine Tokyo days
+const mergedLocations = {};
+locations.forEach(loc => {
+    const key = (loc.place === 'Tokyo') ? 'Tokyo' : loc.place + loc.coords.toString();
+    if (!mergedLocations[key]) {
+        mergedLocations[key] = {
+            place: loc.place,
+            coords: loc.coords,
+            activities: {},
+            notes: {}
+        };
+    }
+    Object.entries(loc.activities).forEach(([day, acts]) => {
+        mergedLocations[key].activities[day] = acts;
+    });
+    Object.entries(loc.notes).forEach(([day, note]) => {
+        mergedLocations[key].notes[day] = note;
+    });
+});
 
-L.polyline([
-    [36.6486, 138.1948],
-    [36.7336, 138.4206]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
+// Draw markers (NO polylineCoords here)
+Object.values(mergedLocations).forEach(loc => {
+    const placeQuery = encodeURIComponent(loc.place + ' Japan');
+    const placeLink = `https://www.google.com/search?tbm=isch&q=${placeQuery}`;
 
-L.marker([36.691100000000006, 138.3077], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Nagano Station<br>To: Yudanaka Station<br>
-<a href='https://www.google.com/maps/dir/Nagano+Station+Japan/Yudanaka+Station+Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Nagano → Yudanaka", {permanent: false})
-.addTo(map);
+    let popupHTML = `<b><a href='${placeLink}' target='_blank'>${loc.place}</a></b><br><br><b>Activities:</b><br>`;
 
+    for (const [day, acts] of Object.entries(loc.activities)) {
+        popupHTML += `<b>${day}</b><br>`;
+        acts.forEach(act => {
+            const actQuery = encodeURIComponent(`${loc.place} ${act}`);
+            popupHTML += `<a href='https://www.google.com/search?tbm=isch&q=${actQuery}' target='_blank'>${act}</a><br>`;
+        });
+        popupHTML += `<br>`;
+    }
 
-L.polyline([
-    [36.7336, 138.4206],
-    [36.5613, 136.6562]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
+    for (const [day, note] of Object.entries(loc.notes)) {
+        popupHTML += `<b>${day} Notes:</b><br>${note}<br><br>`;
+    }
 
-L.marker([36.647450000000006, 137.53840000000002], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Yudanaka Station<br>To: Kanazawa Station<br>
-<a href='https://www.google.com/maps/dir/Yudanaka+Station+Japan/Kanazawa+Station+Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Yudanaka → Kanazawa", {permanent: false})
-.addTo(map);
+    popupHTML += `<a href="https://www.google.com/search?q=${placeQuery}+weather+July" target="_blank">🌤 Weather</a> | `;
+    popupHTML += `<a href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(loc.place)}%20Japan" target="_blank">🏨 Hotels</a> | `;
+    popupHTML += `<a href="https://www.hostelworld.com/findabed.php/ChosenCity.${encodeURIComponent(loc.place)}/ChosenCountry.Japan" target="_blank">🛏 Hostels</a>`;
 
+    L.marker(loc.coords, { icon: defaultIcon })
+        .addTo(map)
+        .bindPopup(popupHTML)
+        .bindTooltip(`${loc.place}`, { permanent: false, direction: 'top' });
+});
 
-L.polyline([
-    [36.5613, 136.6562],
-    [36.1462, 137.2517]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
+const trainSegments = [
+    [[35.6823, 139.7682], [36.7485, 139.5980], "Tokyo Station", "Nikko Station", "Jul 5"],
+    [[36.7485, 139.5980], [36.6486, 138.1948], "Nikko Station", "Nagano Station", "Jul 8"],
+    [[36.6486, 138.1948], [36.5613, 136.6562], "Nagano Station", "Kanazawa Station", "Jul 10"],
+    [[36.5613, 136.6562], [36.1462, 137.2517], "Kanazawa Station", "Takayama Station", "Jul 12"],
+    [[36.1462, 137.2517], [35.0116, 135.7681], "Takayama Station", "Kyoto Station", "Jul 13"],
+    [[35.0116, 135.7681], [34.9730, 138.9333], "Kyoto Station", "Shuzenji Station", "Jul 16"],
+    [[34.9730, 138.9333], [34.8825, 139.0981], "Shuzenji Station", "Jogasaki-Kaigan Station", "Jul 17"],
+    [[34.8825, 139.0981], [34.6784, 138.9450], "Jogasaki-Kaigan Station", "Izukyu Shimoda Station", "Jul 18"],
+    [[34.6784, 138.9450], [35.6823, 139.7682], "Izukyu Shimoda Station", "Tokyo Station", "Jul 19"],
+    [[35.6823, 139.7682], [35.7765, 140.3189], "Tokyo Station", "Narita Airport", "Jul 20"]
+];
 
-L.marker([36.353750000000005, 136.95395000000002], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Kanazawa Station<br>To: Takayama Station<br>
-<a href='https://www.google.com/maps/dir/Kanazawa%20Station%20Japan/Takayama%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Kanazawa → Takayama", {permanent: false})
-.addTo(map);
+trainSegments.forEach(segment => {
+    const [fromCoords, toCoords, fromName, toName, date] = segment;
 
-L.polyline([
-    [36.1462, 137.2517],
-    [35.0116, 135.7681]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
+    L.polyline([
+        fromCoords,
+        toCoords
+    ], {
+        color: 'blue',
+        weight: 3,
+        opacity: 0.5
+    }).addTo(map);
 
-L.marker([35.578900000000004, 136.50990000000002], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Takayama Station<br>To: Kyoto Station<br>
-<a href='https://www.google.com/maps/dir/Takayama%20Station%20Japan/Kyoto%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Takayama → Kyoto", {permanent: false})
-.addTo(map);
-
-L.polyline([
-    [35.0116, 135.7681],
-    [34.6937, 135.5023]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
-
-L.marker([34.85265, 135.6352], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Kyoto Station<br>To: Osaka Station<br>
-<a href='https://www.google.com/maps/dir/Kyoto%20Station%20Japan/Osaka%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Kyoto → Osaka", {permanent: false})
-.addTo(map);
-
-L.polyline([
-    [34.6937, 135.5023],
-    [34.5833, 133.7667]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
-
-L.marker([34.6385, 134.6345], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Osaka Station<br>To: Kurashiki Station<br>
-<a href='https://www.google.com/maps/dir/Osaka%20Station%20Japan/Kurashiki%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Osaka → Kurashiki", {permanent: false})
-.addTo(map);
-
-L.polyline([
-    [34.5833, 133.7667],
-    [35.6823, 139.7682]
-], {
-    color: 'blue',
-    weight: 3,
-    opacity: 0.5
-}).addTo(map);
-
-L.marker([35.1328, 136.76745], {
-    icon: trainIcon
-})
-.bindPopup(`<b>Train Segment</b><br>From: Kurashiki Station<br>To: Tokyo Station<br>
-<a href='https://www.google.com/maps/dir/Kurashiki%20Station%20Japan/Tokyo%20Station%20Japan' target='_blank'>View on Google Maps Transit</a>`)
-.bindTooltip("Train: Kurashiki → Tokyo", {permanent: false})
-.addTo(map);
+    L.marker([
+        (fromCoords[0] + toCoords[0]) / 2,
+        (fromCoords[1] + toCoords[1]) / 2
+    ], {
+        icon: trainIcon
+    })
+    .bindPopup(`<b>Train Segment</b><br>${date}<br>From: ${fromName}<br>To: ${toName}<br>
+<a href='https://www.google.com/maps/dir/${fromName.replace(/ /g, '%20')}+Japan/${toName.replace(/ /g, '%20')}+Japan' target='_blank'>View on Google Maps Transit</a>`)
+    .bindTooltip(`Train: ${fromName} → ${toName}`, {permanent: false})
+    .addTo(map);
+});
