@@ -29,27 +29,15 @@ const trainIcon = L.divIcon({
 
 const locations = [
     {
-        date: 'Jul 3',
-        dateRange: 'Jul 3',
-        coords: [35.6823, 139.7682],
-        place: 'Tokyo',
-        activities: {
-            'Jul 3': ['Check-in and relax', 'dinner in Shinjuku', 'night walk in Shinjuku', 'Omoide Yokocho alley', 'Golden Gai bars', 'Tokyo Metropolitan Government Building observation deck']
-        },
-        notes: {
-            'Jul 3': 'Mitchell arrives 3:10pm, check-in, relax'
-        }
-    },
-    {
         date: 'Jul 4',
         dateRange: 'Jul 4',
         coords: [35.6823, 139.7682],
         place: 'Tokyo',
         activities: {
-            'Jul 4': ['Meiji Shrine', 'Harajuku', 'Takeshita Street', 'Yoyogi Park', 'Ueno Park', 'Ueno Zoo', 'Ameyoko Market', 'Akihabara', 'Asakusa', 'Sensoji Temple', 'Sumida River cruise']
+            'Jul 4': ['Meiji Shrine', 'Harajuku', 'Ueno Park', 'Akihabara', 'Asakusa', 'Sumida River cruise', 'Shibuya Crossing', 'Tokyo National Museum', 'Omoide Yokocho alley', 'Tokyo Tower']
         },
         notes: {
-            'Jul 4': 'Logan arrives 12:35pm'
+            'Jul 4': 'Mitchell arrives 3:10pm, Logan arrives 12:35pm next day'
         }
     },
     {
@@ -58,10 +46,10 @@ const locations = [
         coords: [36.7485, 139.598],
         place: 'Nikko',
         activities: {
-            'Jul 5': ['Shinkyo Bridge', 'Kanmangafuchi Abyss', 'Nikko town walk', 'Rinnoji Temple', 'Futarasan Shrine', 'Nikko Toshogu Shrine', 'Kanaya Hotel History House']
+            'Jul 5': ['Shinkyo Bridge', 'Toshogu Shrine', 'Rinnoji Temple', 'Futarasan Shrine', 'Nikko Tamozawa Imperial Villa Memorial Park', 'Walk along Daiya River']
         },
         notes: {
-            'Jul 5': 'Travel to Nikko'
+            'Jul 5': 'Travel from Tokyo to Nikko'
         }
     },
     {
@@ -70,10 +58,9 @@ const locations = [
         coords: [36.7485, 139.598],
         place: 'Nikko',
         activities: {
-            'Jul 6': ['Lake Chuzenji cruise', 'lakeside walk at Lake Chuzenji', 'Kegon Falls', 'Akechidaira Ropeway', 'Senjogahara Marsh hike', 'Yumoto Onsen', 'Ryuzu Falls']
+            'Jul 6': ['Lake Chuzenji', 'Kegon Falls', 'Senjogahara Marsh', 'Ryuzu Falls', 'Akechidaira Ropeway', 'Yumoto Onsen']
         },
-        notes: {
-        }
+        notes: {}
     },
     {
         date: 'Jul 7',
@@ -81,32 +68,32 @@ const locations = [
         coords: [36.7485, 139.598],
         place: 'Nikko',
         activities: {
-            'Jul 7': ['Tamozawa Imperial Villa', 'Nikko Botanical Garden', 'Kirifuri Falls', 'Tobu World Square', 'Nikko Edo Wonderland', 'relax at onsen']
+            'Jul 7': ['Nikko Edo Wonderland', 'Onsen relaxation', 'Tobu World Square', 'Kirifuri Falls', 'Botanical Garden']
         },
-        notes: {
-        }
+        notes: {}
     },
     {
         date: 'Jul 8',
         dateRange: 'Jul 8',
-        coords: [36.6486, 138.1948],
-        place: 'Nagano',
+        coords: [36.7333, 138.4147],
+        place: 'Yudanaka',
         activities: {
-            'Jul 8': ['DAY trip to Snow Monkey Park','Zenko-ji Temple', 'Nagano Prefectural Museum of Art', 'Joyama Park', 'sake tasting at Nishinomon-Yoshinoya Sake Brewery', 'onsen stroll in Yudanaka']
+            'Jul 8': ['Snow Monkey Park', 'Onsen stroll', 'Yudanaka Station Footbath', 'Stay in a ryokan', 'Visit Shibu Onsen historical bathhouses']
         },
         notes: {
-            'Jul 8': 'Return to Nagano'
+            'Jul 8': 'Travel from Nikko to Yudanaka'
         }
     },
     {
         date: 'Jul 9',
         dateRange: 'Jul 9',
-        coords: [36.6486, 138.1948],
-        place: 'Nagano',
+        coords: [36.5613, 136.6562],
+        place: 'Kanazawa',
         activities: {
-            'Jul 9': ['Matsumoto Castle', 'Nakamachi Street', 'Matsumoto City Museum of Art', 'Daio Wasabi Farm', 'Togakushi Shrine', 'Togakushi Ninja Museum', 'hike in Togakushi area']
+            'Jul 9': ['Kenrokuen Garden', 'Higashi Chaya District', 'Kanazawa Castle', 'Omicho Market', 'Nagamachi Samurai District']
         },
         notes: {
+            'Jul 9': 'Arrive from Nagano'
         }
     },
     {
@@ -115,34 +102,31 @@ const locations = [
         coords: [36.5613, 136.6562],
         place: 'Kanazawa',
         activities: {
-            'Jul 10': ['Kenrokuen Garden', 'Kanazawa Castle Park', 'Higashi Chaya District', 'Omicho Market', '21st Century Museum of Contemporary Art', 'Myoryuji Ninja Temple']
+            'Jul 10': ['Samurai District', '21st Century Museum', 'D.T. Suzuki Museum', 'Myoryuji Ninja Temple', 'Gyokusen-en Garden']
         },
-        notes: {
-            'Jul 10': 'Travel + sightseeing'
-        }
+        notes: {}
     },
     {
         date: 'Jul 11',
         dateRange: 'Jul 11',
-        coords: [36.5613, 136.6562],
-        place: 'Kanazawa',
+        coords: [35.0116, 135.7681],
+        place: 'Kyoto',
         activities: {
-            'Jul 11': ['Nomura Samurai House', 'Nagamachi Samurai District', 'Oyama Shrine', 'D.T. Suzuki Museum', 'Kanazawa Phonograph Museum', 'tea ceremony in Higashi Chaya']
+            'Jul 11': ['Gion walk', 'Kaiseki dinner', 'Yasaka Shrine', 'Pontocho Alley', 'Kiyamachi nightlife']
         },
         notes: {
+            'Jul 11': 'Travel from Kanazawa to Kyoto'
         }
     },
     {
         date: 'Jul 12',
         dateRange: 'Jul 12',
-        coords: [36.1462, 137.2517],
-        place: 'Takayama',
+        coords: [35.0116, 135.7681],
+        place: 'Kyoto',
         activities: {
-            'Jul 12': ['Sannomachi Historic Street', 'Miyagawa Morning Market', 'Takayama Jinya', 'Hida Folk Village', 'Takayama Festival Float Exhibition Hall', 'sake tasting in old town']
+            'Jul 12': ['Fushimi Inari', 'Philosopher’s Path', 'Nijo Castle', 'Kyoto Imperial Palace', 'Heian Shrine']
         },
-        notes: {
-            'Jul 12': 'Scenic ride'
-        }
+        notes: {}
     },
     {
         date: 'Jul 13',
@@ -150,59 +134,63 @@ const locations = [
         coords: [35.0116, 135.7681],
         place: 'Kyoto',
         activities: {
-            'Jul 13': ['Nishiki Market', 'Yasaka Shrine', 'Gion at dusk', 'Philosopher’s Path', 'Maruyama Park', 'Nanzenji Temple', 'evening river walk in Pontocho Alley']
+            'Jul 13': ['Arashiyama Bamboo Grove', 'Tea tasting in Uji', 'Tenryu-ji Temple', 'Monkey Park Iwatayama', 'Kyoto Manga Museum']
         },
-        notes: {
-            'Jul 13': 'Kaiseki dinner'
-        }
+        notes: {}
     },
     {
         date: 'Jul 14',
         dateRange: 'Jul 14',
-        coords: [35.0116, 135.7681],
-        place: 'Kyoto',
+        coords: [34.8825, 139.0981],
+        place: 'Izu Peninsula (Jogasaki Coast)',
         activities: {
-            'Jul 14': ['Arashiyama Bamboo Grove', 'Monkey Park Iwatayama', 'Fushimi Inari Taisha', 'Kiyomizudera Temple', 'Nijo Castle', 'Kyoto Imperial Palace', 'Osaka Castle', 'Dotonbori canal area', 'Umeda Sky Building', 'Kuromon Market', 'Sumiyoshi Taisha Shrine']
+            'Jul 14': ['Jogasaki Coast Trail', 'Mount Omuro ropeway', 'Izu Kogen Art Museum', 'Izu Shaboten Zoo', 'Coastal viewpoints']
         },
         notes: {
+            'Jul 14': 'Travel from Kyoto to Jogasaki'
         }
     },
     {
         date: 'Jul 15',
         dateRange: 'Jul 15',
-        coords: [35.0116, 135.7681],
-        place: 'Kyoto',
-        activities: {
-            'Jul 15': ['Philosopher’s Path', 'Ginkakuji Silver Pavilion', 'Heian Shrine', 'Nishijin Textile Center', 'Kyoto International Manga Museum', 'day trip to Uji Byodoin Temple', 'green tea tasting in Uji', 'day trip to Ohara Sanzen-in Temple', 'countryside walk in Ohara']
-        },
-        notes: {
-        }
-    },
-
-    {
-        date: 'Jul 16-17',
-        dateRange: 'Jul 16-17',
-        coords: [34.8825, 139.0981],  // Use Jogasaki Coast coords
+        coords: [34.8825, 139.0981],
         place: 'Izu Peninsula (Jogasaki Coast)',
         activities: {
-            'Jul 16-17': ['Jogasaki Coast hiking trail', 'Jogasaki Suspension Bridge', 'Mount Omuro ropeway', 'Mount Omuro crater walk', 'Izu Teddy Bear Museum', 'Izu Kogen art museums', 'Jogasaki lighthouse', 'coastal viewpoints']
+            'Jul 15': ['Lighthouse views', 'Art museums', 'Suspension Bridge', 'Jogasaki Marine Town', 'Hot spring footbaths']
+        },
+        notes: {}
+    },
+    {
+        date: 'Jul 16',
+        dateRange: 'Jul 16',
+        coords: [34.6784, 138.9450],
+        place: 'Izu Peninsula (Shimoda)',
+        activities: {
+            'Jul 16': [ 'Surfing', 'Shimoda beaches', 'Perry Road', 'Ryosenji Temple', 'Shimoda Park', 'Shimoda History Museum']
         },
         notes: {
-            'Jul 16-17': 'Seaside hikes'
+            'Jul 16': 'Travel from Jogasaki to Shimoda'
         }
     },
-
+    {
+        date: 'Jul 17',
+        dateRange: 'Jul 17',
+        coords: [34.6784, 138.9450],
+        place: 'Izu Peninsula (Shimoda)',
+        activities: {
+            'Jul 17': ['Tatadohama Beach', 'Shimoda Ropeway', 'Underwater sightseeing boat', 'Shirahama Shrine', 'Snorkeling tour']
+        },
+        notes: {}
+    },
     {
         date: 'Jul 18',
         dateRange: 'Jul 18',
-        coords: [34.6784, 138.945],
+        coords: [34.6784, 138.9450],
         place: 'Izu Peninsula (Shimoda)',
         activities: {
-            'Jul 18': ['Shimoda beaches', 'Shirahama Beach', 'Tatadohama Beach', 'Perry Road', 'Ryosenji Temple', 'Shimoda Park', 'underwater sightseeing boat tour', 'Shimoda Ropeway to Mount Nesugatayama']
+            'Jul 18': ['Onsen and beach day', 'Relaxing cafe views', 'Hiking nearby trails']
         },
-        notes: {
-            'Jul 18': 'Final Izu night'
-        }
+        notes: {}
     },
     {
         date: 'Jul 19',
@@ -210,10 +198,10 @@ const locations = [
         coords: [35.6823, 139.7682],
         place: 'Tokyo',
         activities: {
-            'Jul 19': ['Ueno Park', 'Tokyo National Museum', 'Tokyo Skytree', 'Asakusa Sensoji Temple', 'teamLab Planets', 'teamLab Borderless', 'Odaiba', 'shopping in Shibuya', 'final ramen dinner', 'final sushi dinner']
+            'Jul 19': ['teamLab Planets', 'Tokyo Skytree', 'Shibuya shopping', 'Final sushi dinner', 'Ghibli Clock near Shimbashi']
         },
         notes: {
-            'Jul 19': 'Return to Tokyo'
+            'Jul 19': 'Return from Shimoda'
         }
     },
     {
@@ -222,13 +210,14 @@ const locations = [
         coords: [35.7765, 140.3189],
         place: 'Narita Airport',
         activities: {
-            'Jul 20': ['Relax in airport lounge', 'visit Narita Airport observation decks', 'buy souvenirs at airport shops']
+            'Jul 20': ['Relax at lounge', 'Souvenir shopping', 'Observation deck', 'Airport museum exhibit']
         },
         notes: {
             'Jul 20': 'Flight departs 6:30pm'
         }
-    },
+    }
 ];
+
 
 
 // Merging locations to combine Tokyo days
@@ -283,15 +272,15 @@ Object.values(mergedLocations).forEach(loc => {
 
 const trainSegments = [
     [[35.6823, 139.7682], [36.7485, 139.5980], "Tokyo Station", "Nikko Station", "Jul 5"],
-    [[36.7485, 139.5980], [36.6486, 138.1948], "Nikko Station", "Nagano Station", "Jul 8"],
-    [[36.6486, 138.1948], [36.5613, 136.6562], "Nagano Station", "Kanazawa Station", "Jul 10"],
-    [[36.5613, 136.6562], [36.1462, 137.2517], "Kanazawa Station", "Takayama Station", "Jul 12"],
-    [[36.1462, 137.2517], [35.0116, 135.7681], "Takayama Station", "Kyoto Station", "Jul 13"],
-    [[35.0116, 135.7681], [34.8825, 139.0981], "Kyoto Station", "Jogasaki-Kaigan Station", "Jul 16-17"],
-    [[34.8825, 139.0981], [34.6784, 138.9450], "Jogasaki-Kaigan Station", "Izukyu Shimoda Station", "Jul 18"],
+    [[36.7485, 139.5980], [36.7333, 138.4147], "Nikko Station", "Yudanaka Station", "Jul 8"],
+    [[36.7333, 138.4147], [36.5613, 136.6562], "Nagano Station", "Kanazawa Station", "Jul 9"],
+    [[36.5613, 136.6562], [35.0116, 135.7681], "Kanazawa Station", "Kyoto Station", "Jul 11"],
+    [[35.0116, 135.7681], [34.8825, 139.0981], "Kyoto Station", "Jogasaki-Kaigan Station", "Jul 14"],
+    [[34.8825, 139.0981], [34.6784, 138.9450], "Jogasaki-Kaigan Station", "Izukyu Shimoda Station", "Jul 16"],
     [[34.6784, 138.9450], [35.6823, 139.7682], "Izukyu Shimoda Station", "Tokyo Station", "Jul 19"],
     [[35.6823, 139.7682], [35.7765, 140.3189], "Tokyo Station", "Narita Airport", "Jul 20"]
 ];
+
 
 trainSegments.forEach(segment => {
     const [fromCoords, toCoords, fromName, toName, date] = segment;
