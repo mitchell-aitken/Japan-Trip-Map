@@ -6,25 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             padding: 20px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
-            line-height: 1.6;
-            background-color: #fff;
-            color: #333;
+            background-color: #f4f4f9;
+            color: #222;
         }
         h1, h2, h3 {
-            color: #444;
+            color: #2a2a2a;
+        }
+        h3 a {
+            color: #2a2a2a;
+            text-decoration: none;
+        }
+        h3 a:hover {
+            text-decoration: underline;
         }
         ul {
             padding-left: 20px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        ul li {
+            margin-bottom: 8px;
         }
         button {
-            padding: 8px 16px;
+            padding: 10px 20px;
             font-size: 16px;
             margin-bottom: 20px;
             cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #555;
         }
         @media print {
             body * {
@@ -254,10 +275,35 @@ const locations = [
 
 const itineraryDiv = document.getElementById('itinerary');
 
+const hotelByDate = {
+  'Jul 5': { name: 'Nikko Guesthouse Sumica', url: 'https://www.booking.com/hotel/jp/nikko-guesthouse-sumica.html?label=gen173nr-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWARoJ4gBAZgBMbgBF8gBDNgBAegBAfgBA4gCAagCA7gCmq-OwgbAAgHSAiQxMDMwNjE5OC00NzRlLTRmZjEtODQ2OS1iYmMyMjZmZDg0ZGbYAgXgAgE&aid=304142&ucfs=1&checkin=2025-07-05&checkout=2025-07-06&dest_id=259226&dest_type=landmark&group_adults=2&no_rooms=1&group_children=0&nflt=price%3DCAD-min-120-1&srpvid=ca840b5b95550008&srepoch=1749260240&matching_block_id=42468202_364418892_1_0_0&atlas_src=sr_iw_title' },
+  'Jul 6': { name: 'Nikko Guesthouse Sumica', url: 'https://www.booking.com/hotel/jp/nikko-guesthouse-sumica.html?label=gen173nr-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWARoJ4gBAZgBMbgBF8gBDNgBAegBAfgBA4gCAagCA7gCmq-OwgbAAgHSAiQxMDMwNjE5OC00NzRlLTRmZjEtODQ2OS1iYmMyMjZmZDg0ZGbYAgXgAgE&aid=304142&ucfs=1&checkin=2025-07-05&checkout=2025-07-06&dest_id=259226&dest_type=landmark&group_adults=2&no_rooms=1&group_children=0&nflt=price%3DCAD-min-120-1&srpvid=ca840b5b95550008&srepoch=1749260240&matching_block_id=42468202_364418892_1_0_0&atlas_src=sr_iw_title' },
+  'Jul 7': { name: 'Fairfield by Marriott Tochigi Nikko', url: 'https://www.agoda.com/en-ca/fairfield-by-marriott-tochigi-nikko/hotel/nikko-jp.html' },
+  'Jul 8': { name: 'Shibu Onsen Koishiya Ryokan', url: 'https://www.booking.com/hotel/jp/koishiya.en-gb.html?aid=356936&label=metagha-link-LUCA-hotel-1453118_dev-desktop_los-1_bw-34_dow-Wednesday_defdate-0_room-0_gstadt-2_rateid-0_aud-0_gacid-21404711451_mcid-50_bc-ABYsPg_ppa-0_clrid-0_ad-1_gstkid-0_checkin-20250709_ppt-_lp-2124_r-1583030878335064422&sid=0d1ee0352cdc6c44f2bb837092ee38c0&all_sr_blocks=145311802_376574932_0_0_0%2C145311802_376574932_0_0_0&checkin=2025-07-09&checkout=2025-07-10&dest_id=900048711&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=145311802_376574932_0_0_0%2C145311802_376574932_0_0_0&hpos=1&matching_block_id=145311802_376574932_0_0_0&no_rooms=2&req_adults=2&req_children=0&room1=A&room2=A&sb_price_type=total&sr_order=popularity&sr_pri_blocks=145311802_376574932_0_0_0__391500%2C145311802_376574932_0_0_0__391500&srepoch=1749061351&srpvid=38328130cd1604b6&type=total&ucfs=1&' },
+  'Jul 9': { name: 'Hotel Amanek Kanazawa', url: 'https://www.booking.com/hotel/jp/agora-kanazawa.en-gb.html?aid=311088&label=hotel-pacific-kanazawa-6m_8AIcWgcVwjHGZ6RUtiAS442457299848%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-520497074289%3Alp9214224%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YWWnhi-6waeFeS7C9yEvV_4&sid=2a01edcf0dfb3d7ea60a6b37e3c381be&all_sr_blocks=479671515_152862449_2_2_0&checkin=2025-07-09&checkout=2025-07-11&dest_id=4796715&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=479671515_152862449_2_2_0&hpos=1&matching_block_id=479671515_152862449_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=479671515_152862449_2_2_0__1375632&srepoch=1749410018&srpvid=58bf872ddc7f07d2&type=total&ucfs=1&' },
+  'Jul 10': { name: 'Hotel Amanek Kanazawa', url: 'https://www.booking.com/hotel/jp/agora-kanazawa.en-gb.html?aid=311088&label=hotel-pacific-kanazawa-6m_8AIcWgcVwjHGZ6RUtiAS442457299848%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-520497074289%3Alp9214224%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YWWnhi-6waeFeS7C9yEvV_4&sid=2a01edcf0dfb3d7ea60a6b37e3c381be&all_sr_blocks=479671515_152862449_2_2_0&checkin=2025-07-09&checkout=2025-07-11&dest_id=4796715&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=479671515_152862449_2_2_0&hpos=1&matching_block_id=479671515_152862449_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=479671515_152862449_2_2_0__1375632&srepoch=1749410018&srpvid=58bf872ddc7f07d2&type=total&ucfs=1&' },
+  'Jul 11': { name: 'IMU Hotel Kyoto', url: 'https://www.booking.com/hotel/jp/imu.html?aid=356980&label=gen173rf-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWANoJ4gBAZgBMbgBB8gBDNgBAegBAfgBA4gCAaICGW1pdGNoZWxsLWFpdGtlbi5naXRodWIuaW-oAgO4Apfy-MEGwAIB0gIkNDA5N2FhMDAtZTJkYy00MWExLWFhZjctNjgzZTQ4MDcxYTkz2AIF4AIB&sid=df80ec9ef3342f9522c8645aa50319fd&all_sr_blocks=310204705_273851683_2_2_0&checkin=2025-07-14&checkout=2025-07-16&dest_id=3102047&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=310204705_273851683_2_2_0&hpos=1&matching_block_id=310204705_273851683_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=310204705_273851683_2_2_0__1807500&srepoch=1749086150&srpvid=dd980fc2b1d101eb&type=total&ucfs=1&' },
+  'Jul 12': { name: 'IMU Hotel Kyoto', url: 'https://www.booking.com/hotel/jp/imu.html?aid=356980&label=gen173rf-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWANoJ4gBAZgBMbgBB8gBDNgBAegBAfgBA4gCAaICGW1pdGNoZWxsLWFpdGtlbi5naXRodWIuaW-oAgO4Apfy-MEGwAIB0gIkNDA5N2FhMDAtZTJkYy00MWExLWFhZjctNjgzZTQ4MDcxYTkz2AIF4AIB&sid=df80ec9ef3342f9522c8645aa50319fd&all_sr_blocks=310204705_273851683_2_2_0&checkin=2025-07-14&checkout=2025-07-16&dest_id=3102047&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=310204705_273851683_2_2_0&hpos=1&matching_block_id=310204705_273851683_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=310204705_273851683_2_2_0__1807500&srepoch=1749086150&srpvid=dd980fc2b1d101eb&type=total&ucfs=1&' },
+  'Jul 13': { name: 'IMU Hotel Kyoto', url: 'https://www.booking.com/hotel/jp/imu.html?aid=356980&label=gen173rf-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWANoJ4gBAZgBMbgBB8gBDNgBAegBAfgBA4gCAaICGW1pdGNoZWxsLWFpdGtlbi5naXRodWIuaW-oAgO4Apfy-MEGwAIB0gIkNDA5N2FhMDAtZTJkYy00MWExLWFhZjctNjgzZTQ4MDcxYTkz2AIF4AIB&sid=df80ec9ef3342f9522c8645aa50319fd&all_sr_blocks=310204705_273851683_2_2_0&checkin=2025-07-14&checkout=2025-07-16&dest_id=3102047&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=310204705_273851683_2_2_0&hpos=1&matching_block_id=310204705_273851683_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=310204705_273851683_2_2_0__1807500&srepoch=1749086150&srpvid=dd980fc2b1d101eb&type=total&ucfs=1&' },
+  'Jul 14': { name: 'Sundance Resort Izukogen ANNEX', url: 'https://www.booking.com/hotel/jp/sundance-resort-izukogen-annex.html?label=gen173nr-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWARoJ4gBAZgBMbgBF8gBDNgBAegBAfgBA4gCAagCA7gCmq-OwgbAAgHSAiQxMDMwNjE5OC00NzRlLTRmZjEtODQ2OS1iYmMyMjZmZDg0ZGbYAgXgAgE&aid=356980&ucfs=1&checkin=2025-07-14&checkout=2025-07-16&dest_id=-230912&dest_type=city&group_adults=2&no_rooms=1&group_children=0&nflt=price%3DCAD-min-150-1&srpvid=3a59851580c60e3c&srepoch=1749409106&matching_block_id=223810702_0_2_1_0&atlas_src=sr_iw_title' },
+  'Jul 15': { name: 'Sundance Resort Izukogen ANNEX', url: 'https://www.booking.com/hotel/jp/sundance-resort-izukogen-annex.html?label=gen173nr-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWARoJ4gBAZgBMbgBF8gBDNgBAegBAfgBA4gCAagCA7gCmq-OwgbAAgHSAiQxMDMwNjE5OC00NzRlLTRmZjEtODQ2OS1iYmMyMjZmZDg0ZGbYAgXgAgE&aid=356980&ucfs=1&checkin=2025-07-14&checkout=2025-07-16&dest_id=-230912&dest_type=city&group_adults=2&no_rooms=1&group_children=0&nflt=price%3DCAD-min-150-1&srpvid=3a59851580c60e3c&srepoch=1749409106&matching_block_id=223810702_0_2_1_0&atlas_src=sr_iw_title' },
+  'Jul 16': { name: 'insidey Airbnb', url: 'https://www.booking.com/hotel/jp/inside-y-xia-tian-shi-ji-zuo-mei.html?label=gen173nr-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWARoJ4gBAZgBMbgBF8gBDNgBAegBAfgBA4gCAagCA7gCmq-OwgbAAgHSAiQxMDMwNjE5OC00NzRlLTRmZjEtODQ2OS1iYmMyMjZmZDg0ZGbYAgXgAgE&aid=356980&ucfs=1&checkin=2025-07-16&checkout=2025-07-19&dest_id=-243222&dest_type=city&group_adults=2&no_rooms=1&group_children=0&sr_order=review_score_and_price&nflt=price%3DCAD-min-210-1&srpvid=7c1786260f2a0538&srepoch=1749409548&matching_block_id=420883101_358035478_2_0_0&atlas_src=sr_iw_title' },
+  'Jul 17': { name: 'insidey Airbnb', url: 'https://www.booking.com/hotel/jp/inside-y-xia-tian-shi-ji-zuo-mei.html?label=gen173nr-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWARoJ4gBAZgBMbgBF8gBDNgBAegBAfgBA4gCAagCA7gCmq-OwgbAAgHSAiQxMDMwNjE5OC00NzRlLTRmZjEtODQ2OS1iYmMyMjZmZDg0ZGbYAgXgAgE&aid=356980&ucfs=1&checkin=2025-07-16&checkout=2025-07-19&dest_id=-243222&dest_type=city&group_adults=2&no_rooms=1&group_children=0&sr_order=review_score_and_price&nflt=price%3DCAD-min-210-1&srpvid=7c1786260f2a0538&srepoch=1749409548&matching_block_id=420883101_358035478_2_0_0&atlas_src=sr_iw_title' },
+  'Jul 18': { name: 'insidey Airbnb', url: 'https://www.booking.com/hotel/jp/inside-y-xia-tian-shi-ji-zuo-mei.html?label=gen173nr-1FCAQoggJCEnNlYXJjaF9uaWtrbyBqYXBhbkgzWARoJ4gBAZgBMbgBF8gBDNgBAegBAfgBA4gCAagCA7gCmq-OwgbAAgHSAiQxMDMwNjE5OC00NzRlLTRmZjEtODQ2OS1iYmMyMjZmZDg0ZGbYAgXgAgE&aid=356980&ucfs=1&checkin=2025-07-16&checkout=2025-07-19&dest_id=-243222&dest_type=city&group_adults=2&no_rooms=1&group_children=0&sr_order=review_score_and_price&nflt=price%3DCAD-min-210-1&srpvid=7c1786260f2a0538&srepoch=1749409548&matching_block_id=420883101_358035478_2_0_0&atlas_src=sr_iw_title' }
+};
+
 locations.forEach(loc => {
   const h3 = document.createElement('h3');
   h3.textContent = `${loc.dateRange} - ${loc.place}`;
   itineraryDiv.appendChild(h3);
+
+  if (hotelByDate[loc.date]) {
+    const hotelInfo = hotelByDate[loc.date];
+    const hotelLine = document.createElement('div');
+    hotelLine.innerHTML = `<strong>🏨 Hotel:</strong> <a href="${hotelInfo.url}" target="_blank">${hotelInfo.name}</a>`;
+    hotelLine.style.marginBottom = '8px';
+    itineraryDiv.appendChild(hotelLine);
+  }
 
   const ul = document.createElement('ul');
   for (const [day, activities] of Object.entries(loc.activities)) {
@@ -272,6 +318,7 @@ locations.forEach(loc => {
   itineraryDiv.appendChild(ul);
 });
 </script>
+
 
 </body>
 </html>
