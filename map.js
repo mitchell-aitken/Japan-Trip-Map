@@ -273,7 +273,7 @@ Object.values(mergedLocations).forEach(loc => {
 const trainSegments = [
     [[35.6823, 139.7682], [36.7485, 139.5980], "Tokyo Station", "Nikko Station", "Jul 5"],
     [[36.7485, 139.5980], [36.7333, 138.4147], "Nikko Station", "Yudanaka Station", "Jul 8"],
-    [[36.7333, 138.4147], [36.5613, 136.6562], "Nagano Station", "Kanazawa Station", "Jul 9"],
+    [[36.7333, 138.4147], [36.5613, 136.6562], "Yudanaka Station", "Kanazawa Station", "Jul 9"],
     [[36.5613, 136.6562], [35.0116, 135.7681], "Kanazawa Station", "Kyoto Station", "Jul 11"],
     [[35.0116, 135.7681], [34.8825, 139.0981], "Kyoto Station", "Jogasaki-Kaigan Station", "Jul 14"],
     [[34.8825, 139.0981], [34.6784, 138.9450], "Jogasaki-Kaigan Station", "Izukyu Shimoda Station", "Jul 16"],
